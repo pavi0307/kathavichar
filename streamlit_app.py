@@ -1,20 +1,20 @@
-
-import os
-print("📁 Current working directory:", os.getcwd())
 import streamlit as st
 
+# Set page title
 st.set_page_config(page_title="KathaVichar", layout="centered")
 
-st.title("🧠 KathaVichar: Local Story Collector")
+# Title of the app
+st.title("🖼️ KathaVichar - Tell Your Story")
 
+# Show the image with caption
 st.image("prompts/charminar.jpg", caption="What story or memory does this image bring to mind?")
 
-user_input = st.text_area("✍️ Write your story or description below (in any language):")
+# Prompt the user to enter their story or thoughts
+user_input = st.text_area("Share your thoughts here:")
 
+# Submit button
 if st.button("Submit"):
-    if user_input.strip():
-        with open("data/user_stories.txt", "a", encoding="utf-8") as f:
-            f.write(user_input + "\n---\n")
-        st.success("✅ Thank you! Your story has been recorded.")
+    if user_input.strip() != "":
+        st.success("Thank you for sharing your story! 🎉")
     else:
-        st.warning("⚠️ Please enter a story before submitting.")
+        st.warning("Please enter some text before submitting.")
