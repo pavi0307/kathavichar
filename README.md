@@ -1,40 +1,48 @@
-# 🤝 Team Information
+# 📚 KathaVichar
 
-👤 **Team Leader:** Pavithra — Backend Development, Prompt Engineering, Hugging Face API Integration  
-👥 **Team Members:**
-- Athiya — Frontend Developer (Streamlit UI, Image Display & Input Handling)  
-- Shiva — Creative Lead (Prompt Design, Image Curation)  
-- Navya — QA & Testing (Story Submission Testing, Sample Data Validation)  
-- Hansika — User Research (Outreach, Feedback Collection, User Interviews)  
-
-📅 **Submitted for:** Summer of AI 2025 Hackathon (Swecha)
+_A multilingual storytelling assistant that helps users generate folk stories from image prompts using Streamlit._
 
 ---
 
-# 📚 KathaVichar — Stories from Images
+## 🧩 What the App Does
 
-**An AI-powered app to collect folk stories using Telugu-English prompts and image inspiration.**
-
----
-
-## 🚀 What It Does
-
-KathaVichar shows culturally relevant images like Charminar and village scenes. Users write stories in Telugu or English based on what they see. The story is saved with a timestamp and image name for archival or dataset use.
+KathaVichar allows users to select regional/cultural images (like Charminar, village festivals, etc.), and write stories inspired by them in Telugu, Hindi, or English. It saves these stories along with the selected image name and timestamp. This makes it useful for preserving folk tales, promoting regional language storytelling, and building AI datasets.
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
-- Select from multiple culturally meaningful image prompts
-- Type your story in Telugu or English
-- Save story with timestamp to local file
-- Get confirmation with file path
-- Share feedback through Google Form
+- 📷 Multiple culturally meaningful image prompts
+- ✍️ Story writing interface in local languages
+- 💾 Stories saved with image name and timestamp
+- 📄 All stories stored in a text file (`user_stories.txt`)
+- 📬 Feedback form link for community contributions
 
 ---
 
-## ▶️ How to Run
+## 🖥️ How to Run Locally
 
 ```bash
+git clone https://code.swecha.org/your-username/soai2025-kathavichar.git
+cd kathavichar
 pip install -r requirements.txt
 streamlit run streamlit_app.py
+
+## 📸 App Screenshots
+
+1. **Homepage with image prompt options**
+
+   ![Homepage](uploads/kathavichar_image_options.jpg)
+
+2. **Story written after selecting an image**
+
+   ![Story Writing](uploads/kathavichar_image.jpg)
+
+3. **Saved confirmation message**
+
+   ![Save Confirmation](uploads/kathavichar_story_written.jpg)
+
+4. **Saved stories text file shown**
+
+   ![Saved File](uploads/kathavichar_save_success.jpg)
+
