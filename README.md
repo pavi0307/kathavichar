@@ -73,6 +73,6 @@ Theme: Folk stories, regional culture, AI dataset building
 
 Tech stack: Python, Streamlit, GitLab, Hugging Face (planned)
 
-Repo: soai2025-kathavichar GitLab
+Repo: soai2025-kathavicharGitLab
 
 
