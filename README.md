@@ -34,15 +34,42 @@ streamlit run streamlit_app.py
 
    ![Homepage](uploads/kathavichar_image_options.jpg)
 
-2. **Story written after selecting an image**
+2. **Dispaly image of selected topic**
 
-   ![Story Writing](uploads/kathavichar_image.jpg)
+   ![image displayed](uploads/kathavichar_image.jpg)
 
-3. **Saved confirmation message**
+3. **Story written after selecting an image**
 
-   ![Save Confirmation](uploads/kathavichar_story_written.jpg)
+   ![Story Writing](uploads/kathavichar_story_written.jpg)
 
-4. **Saved stories text file shown**
+4. **Saved confirmation message**
 
-   ![Saved File](uploads/kathavichar_save_success.jpg)
+   ![Save Confirmation](uploads/kathavichar_save_success.jpg)
+
+
+
+# 🤝 Team Information
+
+👤 *Team Leader:* Pavithra — Backend Development, Prompt Engineering, Hugging Face API Integration  
+👥 *Team Members:*
+- Athiya — Frontend Developer (Streamlit UI, Image Display & Input Handling)  
+- Shiva — Creative Lead (Prompt Design, Image Curation)  
+- Navya — QA & Testing (Story Submission Testing, Sample Data Validation)  
+- Hansika — User Research (Outreach, Feedback Collection, User Interviews)
+
+
+
+🎥 Demo / Pitch Video
+➡️ Coming Soon / To be added before final submission
+(Tip: Record using OBS or Game Bar)
+
+
+
+🏁 Submission Summary
+Theme: Folk stories, regional culture, AI dataset building
+
+Tech stack: Python, Streamlit, GitLab, Hugging Face (planned)
+
+Repo: soai2025-kathavichar GitLab
+
 
