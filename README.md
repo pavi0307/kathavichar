@@ -48,24 +48,27 @@ streamlit run streamlit_app.py
 
 
 ---
-# 🤝 Team Information
 
-👤 *Team Leader:* Pavithra — Backend Development, Prompt Engineering, Hugging Face API Integration  
+## 🤝 Team Information
+
+👤 *Team Leader:* **Pavithra** — Backend Development, Prompt Engineering, Hugging Face API Integration  
 👥 *Team Members:*
-- Athiya — Frontend Developer (Streamlit UI, Image Display & Input Handling)  
-- Shiva — Creative Lead (Prompt Design, Image Curation)  
-- Navya — QA & Testing (Story Submission Testing, Sample Data Validation)  
-- Hansika — User Research (Outreach, Feedback Collection, User Interviews)
-
-
----
-🎥 Demo / Pitch Video
-➡️ Coming Soon / To be added before final submission
-(Tip: Record using OBS or Game Bar)
-
+- **Athiya** — Frontend Developer (Streamlit UI, Image Display & Input Handling)  
+- **Shiva** — Creative Lead (Prompt Design, Image Curation)  
+- **Navya** — QA & Testing (Story Submission Testing, Sample Data Validation)  
+- **Hansika** — User Research (Outreach, Feedback Collection, User Interviews)
 
 ---
-🏁 Submission Summary
+
+## 🎥 Demo / Pitch Video
+
+➡️ *Coming Soon* — To be added before final submission  
+🎬 *(Tip: Record your screen using OBS Studio or Windows Game Bar)*
+
+---
+
+
+##🏁 Submission Summary
 Theme: Folk stories, regional culture, AI dataset building
 
 Tech stack: Python, Streamlit, GitLab, Hugging Face (planned)
