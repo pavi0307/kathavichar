@@ -36,6 +36,6 @@ if st.button("Submit"):
         with open("user_stories.txt", "a", encoding="utf-8") as f:
             f.write(f"[{datetime.now()}] - {selected_image}\n{story}\n\n")
         st.success("✅ Your story has been saved!")
-        st.info(f"📁 Saved at: `{file_path}`")
+        st.info(f"📁 Saved at: {file_path}")
     else:
         st.warning("⚠️ Please write something before submitting.")
