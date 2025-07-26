@@ -12,11 +12,11 @@ KathaVichar allows users to select regional/cultural images (like Charminar, vil
 
 ## 🚀 Features
 
-- 📷 Multiple culturally meaningful image prompts
-- ✍️ Story writing interface in local languages
-- 💾 Stories saved with image name and timestamp
-- 📄 All stories stored in a text file (`user_stories.txt`)
-- 📬 Feedback form link for community contributions
+- 📷 Multiple culturally meaningful image prompts  
+- ✍️ Story writing interface in local languages  
+- 💾 Stories saved with image name and timestamp  
+- 📄 All stories stored in a text file (`user_stories.txt`)  
+- 📬 Feedback form link for community contributions  
 
 ---
 
@@ -28,26 +28,12 @@ cd kathavichar
 pip install -r requirements.txt
 streamlit run streamlit_app.py
 
-## 📸 App Screenshots
-
-1. **Homepage with image prompt options**  
-   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_image_options.jpg" width="500"/>
-
-2. **Display image of selected topic**  
-   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_image.jpg" width="500"/>
-
-3. **Story written after selecting an image**  
-   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_story_written.jpg" width="500"/>
-
-4. **Saved confirmation message**  
-   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_save_success.jpg" width="500"/>
-
 ---
 
 ## 🤝 Team Information
 
 👤 *Team Leader:* **Pavithra** — Backend Development, Prompt Engineering, Hugging Face API Integration  
-👥 *Team Members:*
+👥 *Team Members:*  
 - **Athiya** — Frontend Developer (Streamlit UI, Image Display & Input Handling)  
 - **Shiva** — Creative Lead (Prompt Design, Image Curation)  
 - **Navya** — QA & Testing (Story Submission Testing, Sample Data Validation)  
@@ -62,12 +48,8 @@ streamlit run streamlit_app.py
 
 ---
 
+## 🏁 Submission Summary
 
-##🏁 Submission Summary
-Theme: Folk stories, regional culture, AI dataset building
-
-Tech stack: Python, Streamlit, GitLab, Hugging Face (planned)
-
-Repo: soai2025-kathavicharGitLab
-
-
+**Theme:** Folk stories, regional culture, AI dataset building  
+**Tech stack:** Python, Streamlit, GitLab, Hugging Face (planned)  
+**Repo:** [soai2025-kathavichar](https://code.swecha.org/pavithra03/soai2025-kathavichar)
