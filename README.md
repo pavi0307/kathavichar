@@ -47,7 +47,7 @@ streamlit run streamlit_app.py
    ![Save Confirmation](uploads/kathavichar_save_success.jpg)
 
 
-
+---
 # 🤝 Team Information
 
 👤 *Team Leader:* Pavithra — Backend Development, Prompt Engineering, Hugging Face API Integration  
@@ -58,13 +58,13 @@ streamlit run streamlit_app.py
 - Hansika — User Research (Outreach, Feedback Collection, User Interviews)
 
 
-
+---
 🎥 Demo / Pitch Video
 ➡️ Coming Soon / To be added before final submission
 (Tip: Record using OBS or Game Bar)
 
 
-
+---
 🏁 Submission Summary
 Theme: Folk stories, regional culture, AI dataset building
 
