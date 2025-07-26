@@ -1,20 +1,13 @@
 import streamlit as st
+from datetime import datetime
 
-# Set page title
-st.set_page_config(page_title="KathaVichar", layout="centered")
+st.title("KathaVichar - Image to Story")
 
-# Title of the app
-st.title("🖼️ KathaVichar - Tell Your Story")
-
-# Show the image with caption
 st.image("prompts/charminar.jpg", caption="What story or memory does this image bring to mind?")
 
-# Prompt the user to enter their story or thoughts
-user_input = st.text_area("Share your thoughts here:")
+story = st.text_area("Share your story:", height=200)
 
-# Submit button
 if st.button("Submit"):
-    if user_input.strip() != "":
-        st.success("Thank you for sharing your story! 🎉")
-    else:
-        st.warning("Please enter some text before submitting.")
+    with open("user_stories.txt", "a", encoding="utf-8") as f:
+        f.write(f"{datetime.now()} - {story}\n\n")
+    st.success("✅ Your story has been saved! Thank you.")
