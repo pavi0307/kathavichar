@@ -1,3 +1,6 @@
+
+import os
+print("📁 Current working directory:", os.getcwd())
 import streamlit as st
 
 st.set_page_config(page_title="KathaVichar", layout="centered")
