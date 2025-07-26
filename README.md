@@ -31,16 +31,16 @@ streamlit run streamlit_app.py
 ## 📸 App Screenshots
 
 1. **Homepage with image prompt options**  
-   ![Homepage](https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_image_options.jpg)
+   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_image_options.jpg" width="500"/>
 
 2. **Display image of selected topic**  
-   ![Image Displayed](https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_image.jpg)
+   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_image.jpg" width="500"/>
 
 3. **Story written after selecting an image**  
-   ![Story Writing](https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_story_written.jpg)
+   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_story_written.jpg" width="500"/>
 
 4. **Saved confirmation message**  
-   ![Save Confirmation](https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_save_success.jpg)
+   <img src="https://code.swecha.org/pavithra03/soai2025-kathavichar/-/raw/main/kathavichar_save_success.jpg" width="500"/>
 
 ---
 
