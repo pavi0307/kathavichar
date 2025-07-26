@@ -32,7 +32,7 @@ streamlit run streamlit_app.py
 
 1. **Homepage with image prompt options**
 
-   ![Homepage](uploads/kathavichar_image_options.jpg)
+   ![Homepage](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/kathavichar_image_options.jpg)
 
 2. **Dispaly image of selected topic**
 
