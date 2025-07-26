@@ -5,8 +5,7 @@ import os
 # Set Streamlit page configuration
 st.set_page_config(page_title="KathaVichar - Image to Story", layout="centered")
 
-# ✅ Optional: Show a banner image at the top
-st.image("data/kathavichar_image.jpg", use_column_width=True)
+# ❌ Removed the banner image from 'data/kathavichar_image.jpg'
 
 # Title and intro
 st.title("📸 KathaVichar - Image to Story")
