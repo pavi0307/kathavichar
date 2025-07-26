@@ -50,9 +50,7 @@ Build a crowdsourced, AI-enhanced platform to preserve local narratives and ling
 
 |---------------|------------------------…
 
-\[4:02 pm, 25/7/2025] Pavithra: https://code.swecha.org/pavithra03/kathavichar
-
-\[4:22 pm, 25/7/2025] Pavithra: # KathaVichar - Summer of AI 2025
+&nbsp;# KathaVichar - Summer of AI 2025
 
 
 
