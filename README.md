@@ -42,7 +42,8 @@ streamlit run streamlit_app.py
 **Saved confirmation message**  
 ![Saved](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/kathavichar_save_success.jpg)
 
-🎥 **[Watch Demo Video](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/demovideo1.mp4)**
+🎥 [Watch Demo Video](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/demovideo1.mp4)
+
 
 ---
 
