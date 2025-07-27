@@ -103,7 +103,7 @@ We plan to incorporate this feedback in future iterations and continue improving
 ### 🤝 Community Engagement
 - Feature user-submitted stories weekly on homepage or social channels
 - Build recognition (badges, shoutouts) for most active contributors
-- Encourage feedback collection through short in-app forms
+- Encourage feedback collection through short in-app forms.
 
 ---
 
