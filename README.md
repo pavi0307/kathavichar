@@ -47,12 +47,25 @@ streamlit run streamlit_app.py
 
 ## 📸 Screenshots
 
+<<<<<<< HEAD
 ![Homepage](/-/raw/main/kathavichar_homepage.jpg)
 ![Image Options](/-/raw/main/kathavichar_image_options.jpg)
 
 ## 🎥 Demo Video
 
 📽️ [Click to Watch Demo](/-/raw/main/kathavichar_demo.mp4)
+=======
+You can [view all screenshots and demo video here](https://code.swecha.org/pavithra03/kathavichar/-/tree/main/output).
+
+Or directly open individual items:
+
+- 🏠 [Homepage](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_homepage.jpg)
+- 🖼️ [Image Options](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_image_options.jpg)
+- ✍️ [Story Written](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_story_written.jpg)
+- ✅ [Saved Successfully](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_save_success.jpg)
+- 🎥 [Demo Video](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_demo.mp4)
+
+>>>>>>> 455c3ec (Use links instead of embedded images in README)
 
 
 
