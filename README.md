@@ -65,6 +65,9 @@ streamlit run streamlit_app.py
 
 👉 [Click to view output screenshot](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/data/output_sample.jpg)
 
+![Story Written](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/kathavichar_story_written.jpg)
+
+![Saved Successfully](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/kathavichar_save_success.jpg)
 
 
 
