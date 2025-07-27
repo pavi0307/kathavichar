@@ -47,7 +47,7 @@ streamlit run streamlit_app.py
 
 ## 📸 Screenshots
 
-<<<<<<< HEAD
+
 ![Homepage](/-/raw/main/kathavichar_homepage.jpg)
 ![Image Options](/-/raw/main/kathavichar_image_options.jpg)
 
@@ -65,7 +65,7 @@ Or directly open individual items:
 - ✅ [Saved Successfully](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_save_success.jpg)
 - 🎥 [Demo Video](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_demo.mp4)
 
->>>>>>> 455c3ec (Use links instead of embedded images in README)
+
 
 
 
@@ -84,8 +84,6 @@ Hansika — User Research (Outreach, Feedback Collection, User Interviews)
 
 
 
-🎥 Demo / Pitch Video
-➡️ Coming Soon — To be added before final submission
 
 
 
