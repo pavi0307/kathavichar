@@ -46,6 +46,23 @@ streamlit run streamlit_app.py
 
 
 
+## 📸 Sample Screenshots
+
+### 🏠 Homepage
+![Homepage](ouput/kathavichar_homepage.jpg)
+
+### 🖼️ Image Options
+![Image Options](ouput/kathavichar_image_options.jpg)
+
+### ✍️ Story Written
+![Story Written](ouput/kathavichar_story_written.jpg)
+
+### ✅ Saved Successfully
+![Save Success](ouput/kathavichar_save_success.jpg)
+
+
+
+
 🤝 Team Information
 👤 Team Leader:
 Pavithra — Backend Development, Prompt Engineering, Hugging Face API Integration
@@ -63,8 +80,6 @@ Hansika — User Research (Outreach, Feedback Collection, User Interviews)
 
 🎥 Demo / Pitch Video
 ➡️ Coming Soon — To be added before final submission
-🎬 Tip: Record your screen using OBS Studio or Windows Game Bar
-
 
 
 
