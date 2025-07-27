@@ -1,6 +1,6 @@
 # 📚 KathaVichar
 
-A multilingual storytelling assistant that helps users generate folk stories from image prompts using Streamlit.
+A multilingual storytelling assistant that helps users generate folk stories from image prompts using Streamlit
 
 
 ---
