@@ -59,6 +59,19 @@ streamlit run streamlit_app.py
 - **Hansika** — User Research (Outreach, Feedback Collection, Interviews)
 
 ---
+## 🗣️ Feedback Summary
+
+As part of testing the KathaVichar app, we shared the prototype with a few peers and regional language users who tried generating stories in Telugu and Hindi. Here’s a summary of the feedback we received:
+
+- 💡 Users found the image-based storytelling concept engaging and said it helped them think creatively.
+- 🌍 The multilingual output was appreciated, especially for regional storytelling in Telugu.
+- 🖼️ Some users suggested adding more culturally diverse image prompts to increase variety.
+- 📝 A few testers wanted an option to edit the story before saving it.
+- 💾 The story saving with timestamp feature worked well and was considered useful.
+
+We plan to incorporate this feedback in future iterations and continue improving based on more user interactions.
+
+---
 
 ## 🧠 Roadmap – Future Goals
 
