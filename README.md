@@ -44,29 +44,31 @@ pip install -r requirements.txt
 # Run the Streamlit app
 streamlit run streamlit_app.py
 
+# Clone the repository
+git clone https://code.swecha.org/your-username/soai2025-kathavichar.git
 
-## 📸 Screenshots
+# Navigate into the project folder
+cd kathavichar
 
+# Install required dependencies
+pip install -r requirements.txt
 
-![Homepage](/-/raw/main/kathavichar_homepage.jpg)
-![Image Options](/-/raw/main/kathavichar_image_options.jpg)
-
-## 🎥 Demo Video
-
-📽️ [Click to Watch Demo](/-/raw/main/kathavichar_demo.mp4)
-=======
-You can [view all screenshots and demo video here](https://code.swecha.org/pavithra03/kathavichar/-/tree/main/output).
-
-Or directly open individual items:
-
-- 🏠 [Homepage](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_homepage.jpg)
-- 🖼️ [Image Options](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_image_options.jpg)
-- ✍️ [Story Written](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_story_written.jpg)
-- ✅ [Saved Successfully](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_save_success.jpg)
-- 🎥 [Demo Video](https://code.swecha.org/pavithra03/kathavichar/-/blob/main/output/kathavichar_demo.mp4)
+# Run the Streamlit app
+streamlit run streamlit_app.py
 
 
 
+---
+
+
+### 🔍 Sample Output
+
+👉 [Click to view output screenshot](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/data/output_sample.jpg)
+
+
+
+
+---
 
 
 🤝 Team Information
@@ -87,10 +89,12 @@ Hansika — User Research (Outreach, Feedback Collection, User Interviews)
 
 
 
+---
+
+
 🏁 Submission Summary
 Theme: Folk stories, regional culture, AI dataset building
 
 Tech Stack: Python, Streamlit, GitLab, Hugging Face (planned)
 
 Repository: soai2025-kathavichar
-
