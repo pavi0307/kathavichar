@@ -30,19 +30,20 @@ streamlit run streamlit_app.py
 
 ## 🖼️ Sample Output
 
-**Homepage with image prompt options**  
-![Homepage](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/kathavichar_homepage.jpg)
+**📌 Homepage with image prompt options**  
+![Homepage](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/kathavichar_homepage.jpg)
 
-**Image selection screen**  
-![Image Options](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/kathavichar_image_options.jpg)
+**🖼️ Image selection screen**  
+![Image Options](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/kathavichar_image_options.jpg)
 
-**Story written after selecting an image**  
-![Story Written](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/kathavichar_story_written.jpg)
+**📝 Story written after selecting an image**  
+![Story Written](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/kathavichar_story_written.jpg)
 
-**Saved confirmation message**  
-![Saved](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/kathavichar_save_success.jpg)
+**💾 Saved confirmation message**  
+![Saved](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/kathavichar_save_success.jpg)
 
-🎥 [Watch Demo Video](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/demovideo1.mp4)
+**🎥 Demo Video**  
+[▶️ Watch Demo](https://code.swecha.org/pavithra03/kathavichar/-/raw/main/output/demovideo1.mp4)
 
 
 ---
