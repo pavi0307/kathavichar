@@ -111,4 +111,4 @@ We plan to incorporate this feedback in future iterations and continue improving
 
 By blending AI with regional languages and image prompts, **KathaVichar** enables users to **create, preserve, and share stories** rooted in their cultural heritage. It's inclusive, low-barrier, and aligned with the values of **open-source innovation and grassroots participation**.
 
-Let the stories begin! 🌾📖✨.
+Let the stories begin! 🌾📖✨
