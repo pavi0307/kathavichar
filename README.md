@@ -45,22 +45,14 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 
 
-## 📸 Sample Screenshots
+## 📸 Screenshots
 
-### 🏠 Homepage
-![Homepage](output/kathavichar_homepage.jpg)
+![Homepage](/-/raw/main/kathavichar_homepage.jpg)
+![Image Options](/-/raw/main/kathavichar_image_options.jpg)
 
-### 🖼️ Image Options
-![Image Options](output/kathavichar_image_options.jpg)
+## 🎥 Demo Video
 
-### ✍️ Story Written
-![Story Written](output/kathavichar_story_written.jpg)
-
-### ✅ Saved Successfully
-![Save Success](output/kathavichar_save_success.jpg)
-
-### 🎥 Demo Video
-📽️ [Click here to watch the demo](output/kathavichar_demo.mp4)
+📽️ [Click to Watch Demo](/-/raw/main/kathavichar_demo.mp4)
 
 
 
