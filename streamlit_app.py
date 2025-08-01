@@ -1,69 +1,66 @@
+# streamlit_app.py
+
 import streamlit as st
-from datetime import datetime
-import os
-import tempfile
-from pydub import AudioSegment
+import csv
+import datetime
 import speech_recognition as sr
+import tempfile
+import os
 
-st.set_page_config(page_title="KathaVichar - Image to Story", layout="centered")
+# Title
+st.set_page_config(page_title="KathaVichar", layout="centered")
+st.title("📚 KathaVichar – Your Multilingual Story Assistant")
 
-st.title("📸 KathaVichar - Image to Story")
-st.markdown("Choose an image, speak or write a story it brings to your mind!")
+# Step-by-step UI
+st.markdown("### Step 1: Enter your name")
+user_name = st.text_input("Your name")
 
-# --- Image options ---
-image_options = {
-    "Charminar": "prompts/charminar.jpg",
-    "Fort": "prompts/fort.jpg",
-    "Market": "prompts/market.jpg"
-}
+st.markdown("### Step 2: Pick a language")
+language = st.selectbox("Choose a language", ["English", "Telugu", "Hindi", "Tamil"])
 
-selected_image = st.selectbox("Select an image:", list(image_options.keys()))
-st.image(image_options[selected_image], caption=f"Story prompt: {selected_image}", use_container_width=True)
+st.markdown("### Step 3: Choose how to share your story idea")
+mode = st.radio("Input type", ["🧠 Type your idea", "🎙️ Use voice input"])
 
-# --- Language selection ---
-language = st.selectbox("Select language:", ["English", "Telugu", "Hindi", "Other"])
-
-# --- Story input method ---
-input_method = st.radio("Choose input method:", ["Write Story", "Speak Story"])
-
-story_text = ""
-
-if input_method == "Write Story":
-    story_text = st.text_area("📝 Write your story or memory here:", height=200)
-
+# Get user input (text or voice)
+story_prompt = ""
+if mode == "🧠 Type your idea":
+    story_prompt = st.text_area("Enter your story idea")
 else:
-    st.info("🎤 Upload a voice recording (WAV or MP3) and we will transcribe it for you.")
-    uploaded_file = st.file_uploader("Upload audio file", type=["wav", "mp3"])
-    if uploaded_file:
-        st.audio(uploaded_file)
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
-            temp_audio_file.write(uploaded_file.read())
-            temp_audio_path = temp_audio_file.name
-
-        if uploaded_file.name.endswith(".mp3"):
-            sound = AudioSegment.from_mp3(temp_audio_path)
-            wav_path = temp_audio_path.replace(".wav", "_converted.wav")
-            sound.export(wav_path, format="wav")
-            temp_audio_path = wav_path
-
+    st.markdown("Upload a short voice clip (WAV or MP3 format)")
+    audio_file = st.file_uploader("Upload audio", type=["wav", "mp3"])
+    if audio_file is not None:
         recognizer = sr.Recognizer()
-        with sr.AudioFile(temp_audio_path) as source:
+        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+            tmp_file.write(audio_file.read())
+            tmp_path = tmp_file.name
+        with sr.AudioFile(tmp_path) as source:
             audio_data = recognizer.record(source)
             try:
-                story_text = recognizer.recognize_google(audio_data)
-                st.success("✅ Transcription successful!")
-                st.write("📝 Transcribed story:")
-                st.write(story_text)
-            except Exception as e:
-                st.error(f"Could not transcribe audio: {e}")
+                story_prompt = recognizer.recognize_google(audio_data)
+                st.success(f"Transcribed text: {story_prompt}")
+            except sr.UnknownValueError:
+                st.error("Sorry, could not understand the audio.")
+            except sr.RequestError:
+                st.error("API unavailable. Please try again later.")
+        os.remove(tmp_path)
 
-# --- Submit button and saving ---
-if st.button("Submit Story"):
-    if story_text.strip() == "":
-        st.warning("⚠️ Please provide a story either by typing or voice before submitting.")
+# Sample story generator (replace with real LLM output later)
+def generate_story(prompt, lang):
+    return f"Here’s a short folk story in {lang} based on your prompt:\n\nOnce upon a time... (story continues from: '{prompt}')"
+
+# Submit button
+if st.button("Generate Story"):
+    if not user_name or not story_prompt:
+        st.warning("Please enter your name and a story prompt.")
     else:
-        save_path = "user_stories.txt"
-        with open(save_path, "a", encoding="utf-8") as f:
-            f.write(f"[{datetime.now()}] - {selected_image} - Language: {language}\n{story_text}\n\n")
-        st.success("✅ Your story has been saved!")
-        st.info(f"Saved at: {os.path.abspath(save_path)}")
+        story_output = generate_story(story_prompt, language)
+        st.success("✅ Story generated!")
+        st.text_area("Your story", story_output, height=250)
+
+        # Save to CSV
+        with open("user_stories.txt", "a", encoding="utf-8", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([datetime.datetime.now(), user_name, language, story_prompt, story_output])
+
+        st.markdown("🎉 **Thank you! Your story has been saved.**")
+
