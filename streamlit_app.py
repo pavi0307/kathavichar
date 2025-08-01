@@ -1,62 +1,71 @@
 import streamlit as st
-from datetime import datetime
+import requests
+import tempfile
 import os
-import speech_recognition as sr
+import base64
 from pydub import AudioSegment
-import io
-from streamlit_audiorec import st_audiorec
+import speech_recognition as sr
 
-st.set_page_config(page_title="KathaVichar - Image to Story", layout="centered")
-st.title("📸 KathaVichar - Image to Story")
-st.markdown("Let your voice or words tell the story of our culture!")
+st.set_page_config(page_title="KathaVichar", layout="centered")
 
-# Step 1: Choose image
-st.markdown("### 🪜 Step 1: Choose an image")
-image_options = {
-    "Charminar": "prompts/charminar.jpg",
-    "Fort": "prompts/fort.jpg",
-    "Market": "prompts/market.jpg"
-}
-selected_image = st.selectbox("Select an image:", list(image_options.keys()))
-st.image(image_options[selected_image], caption=f"Prompt: {selected_image}", use_container_width=True)
+# App UI
+st.title("🎙️ KathaVichar - Voice to Story Translator")
+st.write("Translate your spoken English story into Telugu.")
 
-# Step 2: Select language
-st.markdown("### 🪜 Step 2: Choose your language")
-language = st.radio("Language:", ["English", "Telugu", "Hindi", "Other"], horizontal=True)
+# Step 1: Voice input
+st.subheader("Step 1: Record or Upload Your Voice")
 
-# Step 3: Story input
-st.markdown("### 🪜 Step 3: Share your story")
+uploaded_file = st.file_uploader("Upload an audio file (WAV/MP3)", type=["wav", "mp3"])
+text_input = None
 
-story = st.text_area("✍️ Type your story (or use voice below):", height=200)
+if uploaded_file:
+    st.audio(uploaded_file, format='audio/wav')
 
-st.markdown("🎤 Or record your voice below (English only for now):")
-wav_audio_data = st_audiorec()
+    # Save uploaded file to temp
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
+        temp_audio_file.write(uploaded_file.read())
+        temp_audio_path = temp_audio_file.name
 
-if wav_audio_data:
-    audio = AudioSegment.from_file(io.BytesIO(wav_audio_data), format="wav")
-    audio.export("temp.wav", format="wav")
+    # Convert MP3 to WAV if needed
+    if uploaded_file.name.endswith(".mp3"):
+        sound = AudioSegment.from_mp3(temp_audio_path)
+        temp_wav_path = temp_audio_path.replace(".mp3", ".wav")
+        sound.export(temp_wav_path, format="wav")
+        temp_audio_path = temp_wav_path
 
+    # Transcribe using SpeechRecognition
     recognizer = sr.Recognizer()
-    with sr.AudioFile("temp.wav") as source:
+    with sr.AudioFile(temp_audio_path) as source:
         audio_data = recognizer.record(source)
         try:
-            voice_text = recognizer.recognize_google(audio_data)
-            st.success("✅ Transcription successful!")
-            st.markdown(f"🗣️ **You said:** {voice_text}")
-            story += "\n" + voice_text  # Append voice to story box
+            text_input = recognizer.recognize_google(audio_data)
+            st.success("Transcription successful!")
+            st.write("🔤 Transcribed Text:")
+            st.write(text_input)
         except sr.UnknownValueError:
-            st.error("😕 Sorry, could not understand your voice.")
-        except sr.RequestError:
-            st.error("⚠️ Could not reach the speech service.")
+            st.error("Could not understand audio")
+        except sr.RequestError as e:
+            st.error(f"Speech Recognition error: {e}")
 
-# Step 4: Submit
-if st.button("📤 Submit Story"):
-    if story.strip():
-        file_path = os.path.abspath("user_stories.txt")
-        with open("user_stories.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{datetime.now()}] - {selected_image} - Language: {language}\n{story}\n\n")
-        st.success("✅ Thank you! Your story has been saved.")
-        st.balloons()
-        st.info(f"📁 Story saved at: {file_path}")
-    else:
-        st.warning("⚠️ Please type or speak your story before submitting.")
+# Step 2: Translation
+if text_input:
+    st.subheader("Step 2: Translate to Telugu")
+
+    if st.button("Translate"):
+        with st.spinner("Translating..."):
+            # Send to Hugging Face API
+            api_url = "https://api-inference.huggingface.co/models/Helsinki-NLP/opus-mt-en-te"
+            headers = {"Authorization": f"Bearer {os.getenv('HF_TOKEN')}"}
+            payload = {"inputs": text_input}
+
+            response = requests.post(api_url, headers=headers, json=payload)
+            if response.status_code == 200:
+                translated = response.json()[0]["translation_text"]
+                st.success("🈯 Translated Telugu Output:")
+                st.write(translated)
+            else:
+                st.error(f"Translation failed. Status code: {response.status_code}")
+
+# Cleanup
+if uploaded_file:
+    os.remove(temp_audio_path)
