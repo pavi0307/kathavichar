@@ -1,0 +1,16 @@
+Image: charminar.jpg
+Story: this is hyderabad famous place
+----------------------------------------
+2025-07-26 13:34:30.855119 - [Charminar] HI
+
+[2025-07-26 13:42:09.244674] - Charminar
+HI
+
+
+[2025-07-26 20:24:31.497305] - Charminar
+hi
+
+
+[2025-08-01 14:38:46.417827] - Charminar - Language: English
+hi
+
