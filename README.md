@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# kathavichar
-=======
 # 📚 KathaVichar
 
 A multilingual storytelling assistant that helps users generate folk stories from image prompts using Streamlit
@@ -115,4 +112,3 @@ We plan to incorporate this feedback in future iterations and continue improving
 By blending AI with regional languages and image prompts, **KathaVichar** enables users to **create, preserve, and share stories** rooted in their cultural heritage. It's inclusive, low-barrier, and aligned with the values of **open-source innovation and grassroots participation**.
 
 Let the stories begin! 🌾📖✨
->>>>>>> b5a087b0ee85c1861e17675f77efc57ed79c8a31
