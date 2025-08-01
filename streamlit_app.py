@@ -1,71 +1,69 @@
 import streamlit as st
-import requests
-import tempfile
+from datetime import datetime
 import os
-import base64
+import tempfile
 from pydub import AudioSegment
 import speech_recognition as sr
 
-st.set_page_config(page_title="KathaVichar", layout="centered")
+st.set_page_config(page_title="KathaVichar - Image to Story", layout="centered")
 
-# App UI
-st.title("🎙️ KathaVichar - Voice to Story Translator")
-st.write("Translate your spoken English story into Telugu.")
+st.title("📸 KathaVichar - Image to Story")
+st.markdown("Choose an image, speak or write a story it brings to your mind!")
 
-# Step 1: Voice input
-st.subheader("Step 1: Record or Upload Your Voice")
+# --- Image options ---
+image_options = {
+    "Charminar": "prompts/charminar.jpg",
+    "Fort": "prompts/fort.jpg",
+    "Market": "prompts/market.jpg"
+}
 
-uploaded_file = st.file_uploader("Upload an audio file (WAV/MP3)", type=["wav", "mp3"])
-text_input = None
+selected_image = st.selectbox("Select an image:", list(image_options.keys()))
+st.image(image_options[selected_image], caption=f"Story prompt: {selected_image}", use_container_width=True)
 
-if uploaded_file:
-    st.audio(uploaded_file, format='audio/wav')
+# --- Language selection ---
+language = st.selectbox("Select language:", ["English", "Telugu", "Hindi", "Other"])
 
-    # Save uploaded file to temp
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
-        temp_audio_file.write(uploaded_file.read())
-        temp_audio_path = temp_audio_file.name
+# --- Story input method ---
+input_method = st.radio("Choose input method:", ["Write Story", "Speak Story"])
 
-    # Convert MP3 to WAV if needed
-    if uploaded_file.name.endswith(".mp3"):
-        sound = AudioSegment.from_mp3(temp_audio_path)
-        temp_wav_path = temp_audio_path.replace(".mp3", ".wav")
-        sound.export(temp_wav_path, format="wav")
-        temp_audio_path = temp_wav_path
+story_text = ""
 
-    # Transcribe using SpeechRecognition
-    recognizer = sr.Recognizer()
-    with sr.AudioFile(temp_audio_path) as source:
-        audio_data = recognizer.record(source)
-        try:
-            text_input = recognizer.recognize_google(audio_data)
-            st.success("Transcription successful!")
-            st.write("🔤 Transcribed Text:")
-            st.write(text_input)
-        except sr.UnknownValueError:
-            st.error("Could not understand audio")
-        except sr.RequestError as e:
-            st.error(f"Speech Recognition error: {e}")
+if input_method == "Write Story":
+    story_text = st.text_area("📝 Write your story or memory here:", height=200)
 
-# Step 2: Translation
-if text_input:
-    st.subheader("Step 2: Translate to Telugu")
+else:
+    st.info("🎤 Upload a voice recording (WAV or MP3) and we will transcribe it for you.")
+    uploaded_file = st.file_uploader("Upload audio file", type=["wav", "mp3"])
+    if uploaded_file:
+        st.audio(uploaded_file)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
+            temp_audio_file.write(uploaded_file.read())
+            temp_audio_path = temp_audio_file.name
 
-    if st.button("Translate"):
-        with st.spinner("Translating..."):
-            # Send to Hugging Face API
-            api_url = "https://api-inference.huggingface.co/models/Helsinki-NLP/opus-mt-en-te"
-            headers = {"Authorization": f"Bearer {os.getenv('HF_TOKEN')}"}
-            payload = {"inputs": text_input}
+        if uploaded_file.name.endswith(".mp3"):
+            sound = AudioSegment.from_mp3(temp_audio_path)
+            wav_path = temp_audio_path.replace(".wav", "_converted.wav")
+            sound.export(wav_path, format="wav")
+            temp_audio_path = wav_path
 
-            response = requests.post(api_url, headers=headers, json=payload)
-            if response.status_code == 200:
-                translated = response.json()[0]["translation_text"]
-                st.success("🈯 Translated Telugu Output:")
-                st.write(translated)
-            else:
-                st.error(f"Translation failed. Status code: {response.status_code}")
+        recognizer = sr.Recognizer()
+        with sr.AudioFile(temp_audio_path) as source:
+            audio_data = recognizer.record(source)
+            try:
+                story_text = recognizer.recognize_google(audio_data)
+                st.success("✅ Transcription successful!")
+                st.write("📝 Transcribed story:")
+                st.write(story_text)
+            except Exception as e:
+                st.error(f"Could not transcribe audio: {e}")
 
-# Cleanup
-if uploaded_file:
-    os.remove(temp_audio_path)
+# --- Submit button and saving ---
+if st.button("Submit Story"):
+    if story_text.strip() == "":
+        st.warning("⚠️ Please provide a story either by typing or voice before submitting.")
+    else:
+        save_path = "user_stories.txt"
+        with open(save_path, "a", encoding="utf-8") as f:
+            f.write(f"[{datetime.now()}] - {selected_image} - Language: {language}\n{story_text}\n\n")
+        st.success("✅ Your story has been saved!")
+        st.info(f"Saved at: {os.path.abspath(save_path)}")
